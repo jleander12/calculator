@@ -1,0 +1,13 @@
+button {
+    width: 80px;
+    height: 80px;    
+    padding: 10px;
+    margin: 10px;
+    background-color: lightgray;
+    border: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: darkgray;
+    text-align: center;
+    text-justify: center;
+}
