@@ -23,9 +23,22 @@
     padding: 10px;
     font-size: 20px;
     text-align: center;
-  }
+}
+
+#equals {
+    grid-row-start: 4;
+    grid-column-start: 4;
+    grid-row-end: 6;
+    grid-column-end: 5;
+}
+
+#zero {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
 
 #display {
+    font-size: 20px;
     padding: 10px;
     margin: 5px 5px 10px 5px;
     flex: 1;

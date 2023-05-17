@@ -43,7 +43,6 @@ function divide(a, b) {
 }
 
 function getChar(e) {
-    // console.log(this.innerHTML);
     if (this.id === 'equals' && secondNum != '') {
         operate(firstNum, secondNum, calcOperation);
     } else if (this.id === 'equals' && secondNum === '') {
