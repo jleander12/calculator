@@ -21,6 +21,9 @@ function operate(a, b, operation) {
         console.log('ERROR: not a valid operation');
         return;
     }
+    if (Number.isInteger(solution) === false) {
+        solution = solution.toFixed(2);
+    }
     firstNum = solution;
     secondNum = '';
     calcOperation = '';
@@ -43,6 +46,15 @@ function divide(a, b) {
 }
 
 function getChar(e) {
+    if (this.innerHTML === 'C') {
+        clearCalc();
+        return;
+    }
+    if (this.innerHTML === "Del") {
+        deleteLast();
+        return;
+    }
+
     if (this.id === 'equals' && secondNum != '') {
         operate(firstNum, secondNum, calcOperation);
     } else if (this.id === 'equals' && secondNum === '') {
@@ -66,6 +78,25 @@ function getChar(e) {
 
 function updateDisplay() {
     display.value = `${firstNum} ${calcOperation} ${secondNum}`;
+}
+
+function clearCalc() {
+    firstNum = '';
+    secondNum = '';
+    calcOperation = '';
+    solution = '';
+    updateDisplay();
+}
+
+function deleteLast() {
+    if (secondNum != '') {
+        secondNum = secondNum.substring(0, secondNum.length - 1);
+    } else if (calcOperation != '') {
+        calcOperation = calcOperation.substring(0, calcOperation.length - 1);
+    } else if (firstNum != '') {
+        firstNum = firstNum.substring(0, firstNum.length - 1);
+    }
+    updateDisplay();
 }
 
 const buttons = document.querySelectorAll('.button');
